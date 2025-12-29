@@ -1,6 +1,6 @@
 import string
 
-class CeasarDescriptor:
+class CaesarDescriptor:
     def __set_name__(self, owner, name):
         self.public_name = name
         self.private_name = f"_{name}"
@@ -49,7 +49,7 @@ class AtbashDescriptor:
         setattr(self, self.private_name, hash)
 
 class User:
-    log_ces = CeasarDescriptor()
+    log_ces = CaesarDescriptor()
     pswd_atbash = AtbashDescriptor()
     def __init__(self, log_ces, pswd_atbash):
         self.log_ces = log_ces
